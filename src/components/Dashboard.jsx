@@ -53,8 +53,8 @@ const COLORS = [
 export default function Dashboard() {
   return (
     <>
-      <div className="">
-        <div class="absolute inset-x-0 bottom-0 h-100 w-full bg-gradient-to-b from-transparent via-white to-white "></div>
+      <div className=" ">
+        <div className="absolute inset-x-0 bottom-0 h-40 w-full bg-gradient-to-b from-transparent via-white to-white "></div>
 
         <div className="">
           <div className="flex flex-row justify-between items-center pb-4 px-6 border-b-2 border-slate-200/50">
@@ -98,56 +98,77 @@ export default function Dashboard() {
             </div>
 
             {/* Charts */}
-            <div className="grid grid-cols-3 gap-4">
-              <div className="col-span-1 bg-white p-4 rounded shadow">
-                <h3 className="font-semibold mb-2">Sales Trends</h3>
-                <LineChart width={200} height={150} data={dataLine}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip />
-                  <Line type="monotone" dataKey="uv" stroke="#3b82f6" />
-                  <Line type="monotone" dataKey="pv" stroke="#ef4444" />
-                </LineChart>
-              </div>
-
-              <div className="col-span-1 bg-white p-4 rounded shadow">
-                <h3 className="font-semibold mb-2">User Acquisition</h3>
-                <BarChart width={300} height={150} data={dataBar}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip />
-                  <Bar dataKey="uv" fill="#3b82f6" />
-                </BarChart>
-              </div>
-
-              <div className="col-span-1 bg-white p-4 rounded shadow">
-                <h3 className="font-semibold mb-2">Top Products</h3>
-                <PieChart width={250} height={150}>
-                  <Pie
-                    data={dataPie}
-                    dataKey="value"
-                    cx="50%"
-                    cy="50%"
-                    outerRadius={60}
-                    fill="#8884d8"
-                    label
-                  >
-                    {dataPie.map((entry, index) => (
-                      <Cell
-                        key={`cell-${index}`}
-                        fill={COLORS[index % COLORS.length]}
-                      />
-                    ))}
-                  </Pie>
-                </PieChart>
-              </div>
-            </div>
+            <Charts />
           </div>
         </div>
       </div>
     </>
+  );
+}
+
+function Charts() {
+  return (
+    <div className="grid grid-cols-3 gap-4">
+      <div className="col-span-1 bg-white p-4 rounded shadow">
+        <div className="flex flex-col mb-4  items-start">
+          <h3 className="font-bold text-xl text-black">Sales Trends</h3>
+          <p className="text-xs text-gray-500">
+            A line chart showing sales trends over time.
+          </p>
+        </div>
+
+        <LineChart width={200} height={150} data={dataLine}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Line type="monotone" dataKey="uv" stroke="#3b82f6" />
+          <Line type="monotone" dataKey="pv" stroke="#ef4444" />
+        </LineChart>
+      </div>
+
+      <div className=" flex flex-col  col-span-1 bg-white p-4 rounded shadow">
+        <div className="flex flex-col mb-4  items-start ">
+          <h3 className="font-bold text-xl text-black">User Acquisition</h3>
+          <p className="text-xs text-gray-500">
+            A bar chart showing user acquisition by channel.
+          </p>
+        </div>
+
+        <BarChart width={250} height={150} data={dataBar}>
+          <CartesianGrid strokeDasharray="9 9" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Bar dataKey="uv" fill="#3b82f6" />
+        </BarChart>
+      </div>
+
+      <div className="col-span-1 bg-white p-4 rounded shadow">
+        <div className="flex flex-col mb-4  items-start">
+          <h3 className="font-bold text-xl text-black">Top Products</h3>
+          <p className="text-xs text-gray-500">
+            A pie chart showing the top selling products.
+          </p>
+        </div>
+
+        <PieChart width={250} height={150}>
+          <Pie
+            data={dataPie}
+            dataKey="value"
+            cx="50%"
+            cy="50%"
+            outerRadius={60}
+            fill="#8884d8"
+            label
+          >
+            {dataPie.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill="#3b82f6" />
+            ))}
+          </Pie>
+        </PieChart>
+      </div>
+    </div>
   );
 }
 
