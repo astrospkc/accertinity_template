@@ -14,15 +14,23 @@ const Trust = () => {
         <img
           src="/images/Netflix-logo.jpg"
           alt="netflix"
-          className="w-40 animate-float"
+          className=" w-15 h-10 md:w-40 animate-float "
         />
         <img
           src="/images/googlelogo2.png"
           alt="google"
-          className="mix-blend-multiply w-30"
+          className="mix-blend-multiply  w-15 h-10 hover:scale-110 md:w-30"
         />
-        <img src="/images/Meta-Logo.png" alt="meta" className="w-40" />
-        <img src="/images/onlyfans2.png" alt="onlyfans" className="w-30" />
+        <img
+          src="/images/Meta-Logo.png"
+          alt="meta"
+          className=" w-15 h-10 md:w-40"
+        />
+        <img
+          src="/images/onlyfans2.png"
+          alt="onlyfans"
+          className=" w-15 h-10 md:w-30"
+        />
       </div>
     </div>
   );

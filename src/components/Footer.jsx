@@ -40,7 +40,7 @@ const Footer = () => {
           <div className="absolute pt-20 inset-x-0 top-0 h-40 w-full bg-gradient-to-t from-transparent via-white to-white"></div>
           <div className="absolute pt-20 inset-x-0 bottom-0 h-20 w-full bg-gradient-to-b from-transparent via-white to-gray-50"></div>
 
-          <p class="text-center text-5xl md:text-9xl lg:text-[18rem] font-bold bg-clip-text  text-gray-500/20">
+          <p class="text-center text-xl md:text-9xl lg:text-[18rem] font-bold bg-clip-text  text-gray-500/20">
             EVERY AI
           </p>
         </div>

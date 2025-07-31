@@ -21,7 +21,7 @@ const Features = () => {
           <div className="border-x-2 border-dashed border-gray-400/30 ">
             <div className="border-l-2 border-dashed border-gray-400/30"></div>
             <div className="justify-center items-center flex flex-col gap-4">
-              <h1 className="text-4xl font-semibold w-full z-5">
+              <h1 className=" text-3xl md:text-4xl font-semibold w-full z-5">
                 Packed with thousands of features
               </h1>
               <p className="w-3/4">
@@ -30,13 +30,13 @@ const Features = () => {
                 copy for you.
               </p>
 
-              <div className="flex flex-row border-t-2 border-dashed border-gray-400/30">
-                <div className=" flex-1 border-r-2 border-gray-400/30 ">
+              <div className="flex flex-col md:flex-row border-t-2 border-dashed border-gray-400/30">
+                <div className=" flex-1 relative border-r-2 border-gray-400/30  h-[40%] md:h-full ">
                   <div className="p-4 m-4 items-start text-start flex flex-col">
-                    <h1 className="text-2xl font-semibold">
+                    <h1 className="text-2xl font-semibold z-5">
                       Generate images with text
                     </h1>
-                    <p className="py-4 text-gray-500 w-3/4">
+                    <p className="py-4 text-gray-500 w-3/4 z-5">
                       Generate images from a text prompt, a video, or a video
                       segment in bulk at the speed of light.
                     </p>
@@ -105,8 +105,8 @@ const Features = () => {
             </div>
             <div className="border-r-2 border-dashed border-gray-400/30"></div>
           </div>
-          <div className=" flex flex-row border-t-2 border-r-2 border-dashed border-gray-400/30">
-            <div className="flex-1 border-r-2 border-gray-400/30 ">
+          <div className=" flex  flex-col md:flex-row border-t-2 border-r-2 border-dashed border-gray-400/30">
+            <div className=" flex md:flex-1 border-r-2 border-gray-400/30 ">
               <div className="p-4">
                 <div className="flex flex-col justify-center text-start  gap-4  text-gray-600 items-start ">
                   <h1 className="text-2xl font-semibold text-black">
@@ -135,6 +135,8 @@ const Features = () => {
                   </p>
                 </div>
                 <div>
+                  <TechBanner />
+                  <TechBanner />
                   <TechBanner />
                 </div>
               </div>
@@ -277,15 +279,17 @@ const techStack = [
 
 const TechBanner = () => {
   return (
-    <div className="flex gap-3 overflow-x-auto no-scrollbar py-4">
+    <div className="flex gap-10 overflow-x-hidden whitespace-nowrap  py-4">
       {techStack.map((tech, index) => (
         <motion.div
-          key={tech.name}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: index * 0.1 }}
-          whileHover={{ scale: 1.05 }}
-          className="flex items-center gap-2 border px-4 py-2 rounded-xl bg-white shadow-sm cursor-pointer"
+          className="inline-block"
+          animate={{ x: ["0%", "500%"] }}
+          transition={{
+            repeat: Infinity,
+            duration: 600,
+            ease: "linear",
+          }}
+          key={index}
         >
           {tech.icon}
           <span className="text-sm font-medium">{tech.name}</span>

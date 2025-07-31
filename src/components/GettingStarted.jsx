@@ -11,10 +11,10 @@ const GettingStarted = () => {
         </span>
         <ChevronRight className="w-4 h-4 text-gray-600 font-bold" />
       </button>
-      <div className="text-6xl md:text-8xl font-bold w-5/6 ">
+      <div className="text-2xl md:text-8xl font-bold w-5/6 ">
         Generate Images, Text and Videos with AI
       </div>
-      <p className="text-xl w-[53%] text-wrap text-gray-600">
+      <p className="text-sm md:text-xl w-[85%] md:w-[53%] text-wrap text-gray-600">
         Everything AI seamlessly integrated all the modern AI generation tools
         into one platform so that you can generate content with a single click
       </p>

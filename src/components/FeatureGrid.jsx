@@ -55,12 +55,12 @@ const features = [
 const FeatureGrid = () => {
   return (
     <section className="max-w-6xl mx-auto py-16 px-4 ">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-l-2 border-gray-200/30 rounded-lg overflow-hidden">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-0 md:border-l-2 border-gray-200/30 rounded-lg overflow-hidden">
         {features.map((feature, index) => (
           <div
             key={index}
-            className="group p-6 border-b-2 border-r-2  border-gray-200/30 flex flex-col gap-2 transition justify-start items-start 
-             hover:bg-gradient-to-t hover:from-gray-200 hover:to-transparent"
+            className="group p-8 md:p-6  border-0 md:border-b-2 md:border-r-2  md:border-gray-200/30 flex flex-col gap-2 transition justify-start items-start hover:bg-gradient-to-b hover:from-gray-200/40 hover:to-transparent
+             md:hover:bg-gradient-to-t md:hover:from-gray-200/40 md:hover:to-transparent"
           >
             <div className="text-black">{feature.icon}</div>
             <h3 className="text-lg font-semibold text-black transition-transform duration-300 ease-out group-hover:translate-x-2">
