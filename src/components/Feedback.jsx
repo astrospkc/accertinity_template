@@ -21,7 +21,7 @@ const Feedback = () => {
           animate={{ y: ["0%", "-500%"] }}
           transition={{
             repeat: Infinity,
-            duration: 800,
+            duration: 100,
             ease: "linear",
           }}
           className="grid grid-cols-1 md:grid-cols-3  gap-4 md:gap-8 "
